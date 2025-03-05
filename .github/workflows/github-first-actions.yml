@@ -1,11 +1,13 @@
 name: My First GitHub Actions
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'src/addition.py'  # Only trigger when files in the 'src' directory are modified
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         python-version: [3.8, 3.9]

@@ -1,0 +1,31 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the 'main' branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests targeting 'main' branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # The operating system on which the job will run
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # Action to checkout the repository
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'  # Set up Python 3.9
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # Install dependencies from a requirements file
+
+    - name: Run tests
+      run: |
+        pytest  # Run tests using pytest

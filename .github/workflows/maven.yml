@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4  # Step 1: Checkout the code
 
-      - name: Set up JDK 17
+      - name: Set up JDK 17  # Step 2: Set up Java
         uses: actions/setup-java@v4
         with:
           java-version: '17'
@@ -20,14 +20,14 @@ jobs:
           architecture: x64
           cache: maven
 
-      - name: Build and Test with Maven
+      - name: Build and Test with Maven  # Step 3: Build and Test
         run: mvn --batch-mode --update-snapshots verify
 
-      - name: Upload build artifacts
+      - name: Upload build artifacts  # Step 4: Optional - Upload Artifacts
         run: |
           mkdir staging
           cp target/*.jar staging
-        - uses: actions/upload-artifact@v4
-          with:
-            name: my-artifacts
-            path: staging
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifacts
+          path: staging

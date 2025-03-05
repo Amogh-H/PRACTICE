@@ -1,0 +1,145 @@
+"apple" : "Its the information in the object"
+
+---
+# This is correct YAML list syntax
+- abcd
+- efgh
+- ijk
+
+
+# lists
+
+- abcd
+- efgh
+- ijk
+
+
+# Correct implicit key usage in a list:
+- message
+- text
+- another item
+
+
+colours:
+ - black
+ - red
+ - green
+
+---
+cities:[A,B,C]
+
+{mango: "yellow", age: 56, red: "color", aji: 32}
+
+
+
+---
+# String variables
+my: vs code 
+fruit: "applee"
+job: 'fruit'
+
+message: >
+ this all 
+ written below
+ and are same line
+
+# interpreted as one line 
+
+---
+# numbers
+
+value: 23
+val: 34.23
+booln: No # n, N, false, False, FALSE
+
+---
+#Specify the type 
+
+zero: !!int 23
+positive num: !!int 43
+Negative num: !!int -342
+binary num: !!int 0b110
+octal num: !!int 06573
+hexa num: !!int 0x45
+commaValue: !!int +54_000 #54,000
+
+#Floatiing point numbers
+mks: !!float 34.34
+infinite: !!float .inf
+not a num: .nan
+
+
+message: !!str this is a string data type
+
+#Null
+this : Null #null, NULL, ~
+~: this key is null
+
+#date n time
+date: !!timestamp 2002-12-14
+
+meeting_time: 2025-02-26T14:30:00+02:00
+custom_date: "February 26, 2025"
+
+event:
+  name: "Project Deadline"
+  date: 2025-05-01
+  time: 15:00:00
+  timezone: "+03:00"
+  location: "London"
+
+
+
+
+description: |
+ this is a 
+ multi line string
+
+#  Set datatype: A set contains unique values, with no duplicates.
+fruits: !!set
+  Apple: null
+  Banana: null
+  Orange: null
+
+# Pair datatype: A pair represents a two-part collection of values.
+
+pair_example: !!pair
+  first: 1
+  second: "second value"
+
+
+# A nested sequence is simply a sequence inside another sequence or list.
+
+matrix:
+  - [1, 2, 3]
+  - [4, 5, 6]
+  - [7, 8, 9]
+
+
+# You can also have sequences inside mappings (dictionaries):
+
+employees:
+  - name: John
+    skills: [Python, Java]
+  - name: Jane
+    skills: [JavaScript, HTML]
+
+  
+---
+#nested sequence 
+- 
+ - square
+ - triangle 
+ - rectangle
+-
+ - polygon
+ - shape
+ - circle
+
+
+
+
+
+
+
+

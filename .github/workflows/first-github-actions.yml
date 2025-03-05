@@ -1,6 +1,9 @@
 name: My First GitHub Actions
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'src/addition.py'  # This will trigger the action only if this file is changed
 
 jobs:
   build:
@@ -8,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: [3.8, 3.9]
+        python-version: [3.8]
 
     steps:
     - uses: actions/checkout@v3

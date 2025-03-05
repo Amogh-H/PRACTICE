@@ -1,4 +1,4 @@
-# This is to check
+# This is to check and run actions
 
 def add(a, b):
     return a + b

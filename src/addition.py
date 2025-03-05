@@ -1,28 +1,8 @@
-name: My First GitHub Actions
+# This is to check
 
-on: [push]
+def add(a, b):
+    return a + b
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        python-version: [3.8]
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest
-
-    - name: Run tests
-      run: |
-        cd src
-        python -m pytest addition.py
+def test_add():
+    assert add(1, 2) == 3
+    assert add(1, 0) == 1  # Corrected 
